@@ -1,0 +1,118 @@
+/* ===========================================================
+   EcoRobo Design System
+   Variables
+=========================================================== */
+
+:root{
+
+    /* ======================================================
+       Cores
+    ====================================================== */
+
+    --primary:#2F6B4F;
+    --primary-color:#2F6B4F;
+
+    --primary-light:#4C956C;
+
+    --secondary:#B7E4C7;
+    --secondary-color:#B7E4C7;
+
+    --background:#F6F8F5;
+    --background-color:#F6F8F5;
+
+    --surface:#FFFFFF;
+    --surface-color:#FFFFFF;
+
+    --text:#1E1E1E;
+    --text-color:#1E1E1E;
+
+    --text-light:#6B7280;
+
+    --success:#43AA8B;
+    --warning:#F9C74F;
+    --danger:#F94144;
+
+    --border:#E5E7EB;
+
+    /* ======================================================
+       Bordas
+    ====================================================== */
+
+    --radius-small:10px;
+    --radius-medium:18px;
+    --radius-large:28px;
+
+    /* ======================================================
+       Sombras
+    ====================================================== */
+
+    --shadow-small:
+        0 2px 8px rgba(0,0,0,.06);
+
+    --shadow-medium:
+        0 8px 20px rgba(0,0,0,.08);
+
+    /* ======================================================
+       Tipografia
+    ====================================================== */
+
+    --font:"Poppins",sans-serif;
+
+    --title:28px;
+    --subtitle:20px;
+    --text-size:15px;
+    --small:13px;
+
+    /* ======================================================
+       Transições
+    ====================================================== */
+
+    --transition:.25s ease;
+
+}
+
+/* ===========================================================
+   Modo Escuro
+
+   Sobrescreve as mesmas variáveis acima — como o resto do CSS
+   já usa var(--background-color), var(--surface-color) etc.
+   em vez de cores fixas, isso já propaga pra quase tudo. Os
+   poucos lugares que ainda tinham "white"/cor fixa no lugar
+   de uma variável foram trocados nos respectivos arquivos de
+   página (ver css/*.css).
+=========================================================== */
+
+body.dark-mode{
+
+    --primary:#4FAE7C;
+    --primary-color:#4FAE7C;
+
+    --primary-light:#6BC496;
+
+    --secondary:#3D8A63;
+    --secondary-color:#3D8A63;
+
+    --background:#12171A;
+    --background-color:#12171A;
+
+    --surface:#1C2226;
+    --surface-color:#1C2226;
+
+    --text:#F1F5F3;
+    --text-color:#F1F5F3;
+
+    --text-light:#9BA8A2;
+
+    --success:#4FAE7C;
+    --warning:#F9C74F;
+    --danger:#F87171;
+
+    --border:#2C3438;
+
+}
+
+body.dark-mode{
+
+    transition:background-color .2s ease;
+
+}

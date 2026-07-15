@@ -1,0 +1,195 @@
+/* ==========================================================
+   EcoRobo
+   Realidade Aumentada
+========================================================== */
+
+/* ==========================================================
+   Página
+========================================================== */
+
+.ar-page{
+
+    width:100%;
+
+    /* 100px = altura da navbar (ver .navbar em components.css) —
+       sem descontar ela aqui, a página sobrava 100px mais alta
+       que a viewport e empurrava o texto de status pra baixo da
+       dobra. */
+    min-height:calc(100vh - 100px);
+
+    padding:24px;
+
+    /* 78px do bottom-nav fixo (ver .bottom-nav em components.css)
+       + respiro, pra o texto de status não ficar por baixo dele. */
+    padding-bottom:100px;
+
+    background:var(--background-color);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+/* ==========================================================
+   Cabeçalho
+========================================================== */
+
+.ar-header{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.ar-header h1{
+
+    color:var(--primary-color);
+
+    font-size:2rem;
+
+}
+
+.ar-header p{
+
+    color:var(--text-light);
+
+    line-height:1.6;
+
+}
+
+/* ==========================================================
+   AR
+
+   A câmera preenche o espaço disponível — diferente do jogo
+   (retrato fixo 9/16), a experiência de AR usa a proporção
+   natural da câmera do dispositivo.
+========================================================== */
+
+.ar-frame-wrapper{
+
+    position:relative;
+
+    flex:1;
+
+    min-height:45vh;
+
+    background:#000;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+
+}
+
+/* ==========================================================
+   Iframe posicionado absoluto (em vez de width/height:100%) —
+   um <iframe> é um elemento substituído, e height:100% dele
+   não resolve de forma confiável contra um pai cuja altura
+   vem só de flex-grow (sem uma altura fixa/definida) — o
+   resultado, na prática, era o iframe cair pro tamanho padrão
+   do navegador (150px) e sobrar uma faixa preta vazia embaixo
+   da câmera. position:absolute + inset:0 preenche o wrapper
+   sempre, sem depender dessa resolução de porcentagem.
+========================================================== */
+
+.ar-frame{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    border:none;
+
+}
+
+/* ==========================================================
+   Loading Overlay
+
+   Fica por cima do iframe até a câmera avisar "cameraReady" —
+   cobre o pedido de permissão de câmera e o carregamento do
+   modelo 3D.
+========================================================== */
+
+.ar-loading-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:10;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:16px;
+
+    background:#000;
+
+    color:white;
+
+    transition:opacity .3s ease;
+
+}
+
+.ar-loading-overlay p{
+
+    font-size:.9rem;
+
+    opacity:.85;
+
+}
+
+.ar-loading-overlay.hidden{
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+/* ==========================================================
+   Status do marcador
+========================================================== */
+
+.ar-status{
+
+    text-align:center;
+
+    color:var(--text-light);
+
+    font-size:.9rem;
+
+}
+
+/* ==========================================================
+   Responsividade
+========================================================== */
+
+@media(min-width:900px){
+
+    .ar-page{
+
+        max-width:900px;
+
+        margin:auto;
+
+    }
+
+}

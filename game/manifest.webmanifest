@@ -1,0 +1,12 @@
+{
+  "name": "Projeto 17-07",
+  "short_name": "Projeto 17-07",
+  "id": "projeto.dia1707.maymignicvin",
+  "description": "",
+  "orientation": "portrait",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "black",
+  "categories": ["games", "entertainment"],
+  "icons": []
+}

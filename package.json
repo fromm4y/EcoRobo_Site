@@ -1,0 +1,8 @@
+{
+  "name": "ecorobo-site",
+  "private": true,
+  "description": "EcoRobo — front-end estático + função serverless (api/analisar-residuo.js) que faz proxy para a API do Gemini.",
+  "engines": {
+    "node": ">=18"
+  }
+}

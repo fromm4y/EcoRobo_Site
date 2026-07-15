@@ -1,0 +1,84 @@
+<!-- ==========================================================
+     EcoRobo
+     Página do Catálogo
+========================================================== -->
+
+<div id="navbar-container"></div>
+
+<div class="catalog-page">
+
+    <!-- ==========================================
+         Cabeçalho
+    =========================================== -->
+
+    <section class="catalog-header">
+
+        <h1>📚 Meu Catálogo</h1>
+
+        <p>
+            Tudo que você já escaneou e identificou com o EcoRobo.
+        </p>
+
+    </section>
+
+    <!-- ==========================================
+         Resumo em destaque
+    =========================================== -->
+
+    <section id="catalogSummary" class="catalog-summary">
+
+        <h2>
+            ♻️ Você já reciclou <span id="catalogTotal">0</span> itens
+        </h2>
+
+        <p>
+            Continue escaneando pra aumentar seu impacto no planeta!
+        </p>
+
+    </section>
+
+    <!-- ==========================================
+         Filtros por categoria
+    =========================================== -->
+
+    <div id="catalogFilters" class="catalog-filters">
+
+        <!-- preenchido via JS (Todos + categorias reais do usuário) -->
+
+    </div>
+
+    <!-- ==========================================
+         Estado vazio (sem itens escaneados)
+    =========================================== -->
+
+    <section id="catalogEmpty" class="catalog-empty hidden">
+
+        <span class="catalog-empty-icon" aria-hidden="true">📦</span>
+
+        <p>
+            Você ainda não escaneou nenhum resíduo.
+            <br>
+            Toque em Câmera para começar!
+        </p>
+
+        <button id="btnCatalogScan" class="primary-button">
+            📷 Escanear Agora
+        </button>
+
+    </section>
+
+    <!-- ==========================================
+         Grid de itens escaneados
+    =========================================== -->
+
+    <section
+        id="catalogGrid"
+        class="catalog-grid">
+
+        <!-- preenchido via JS com os resíduos reais do usuário (Firestore) -->
+
+    </section>
+
+</div>
+
+<div id="footer-container"></div>

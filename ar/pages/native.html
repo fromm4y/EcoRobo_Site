@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Model Viewer</title>
+  </head>
+  <body>
+    <model-viewer
+      src="../modelos/cansScaleUpdate.glb"
+      ios-src="../modelos/canScaleUpdate.usdz"
+      alt="Modelo 3D de latas"
+      ar
+      ar-modes="scene-viewer webxr"
+      camera-controls
+      auto-rotate
+    >
+    </model-viewer>
+  </body>
+</html>

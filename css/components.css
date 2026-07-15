@@ -1,0 +1,1059 @@
+@import url("variables.css");
+
+/* ===========================================================
+BUTTON
+=========================================================== */
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:16px 24px;
+
+    border-radius:18px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-2px);
+
+    background:var(--primary-light);
+
+}
+
+/* ===========================================================
+PRIMARY / SECONDARY BUTTON
+
+Usados nas telas de Home, Câmera e Resultado. Ficam aqui
+(global) pra qualquer página que use essas classes herdar
+o mesmo estilo, sem precisar redefinir por página.
+=========================================================== */
+
+.primary-button,
+
+.secondary-button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.primary-button{
+
+    background:var(--primary-color);
+
+    color:white;
+
+}
+
+.primary-button:hover{
+
+    background:var(--secondary-color);
+
+    transform:translateY(-2px);
+
+}
+
+.secondary-button{
+
+    background:var(--surface-color);
+
+    color:var(--primary-color);
+
+    border:2px solid var(--primary-color);
+
+}
+
+.secondary-button:hover{
+
+    background:var(--primary-color);
+
+    color:white;
+
+}
+
+.primary-button.disabled,
+
+.secondary-button.disabled{
+
+    opacity:.5;
+
+    cursor:not-allowed;
+
+}
+
+.secondary-button.disabled:hover{
+
+    background:var(--surface-color);
+
+    color:var(--primary-color);
+
+}
+
+.primary-button.danger{
+
+    background:var(--danger);
+
+}
+
+.primary-button.danger:hover{
+
+    background:#d6303a;
+
+}
+
+/* ==========================================================
+   Streak (dias seguidos escaneando)
+
+   Usado na Home (topo, antes do banner) e no Perfil (embaixo
+   do cabeçalho) — ver #homeStreak/#profileStreak.
+========================================================== */
+
+.streak-banner{
+
+    width:max-content;
+
+    max-width:100%;
+
+    background:#FFF4E5;
+
+    color:#B45309;
+
+    font-weight:600;
+
+    font-size:.85rem;
+
+    padding:8px 16px;
+
+    border-radius:50px;
+
+}
+
+.streak-banner.hidden{
+
+    display:none;
+
+}
+
+/* ===========================================================
+CARD
+=========================================================== */
+
+.card{
+
+    background:var(--surface-color);
+
+    border-radius:22px;
+
+    box-shadow:var(--shadow-small);
+
+    padding:20px;
+
+}
+
+/* ===========================================================
+SECTION TITLE
+=========================================================== */
+
+.section-title{
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+/* ===========================================================
+INPUT
+=========================================================== */
+
+.input{
+
+    width:100%;
+
+    padding:16px;
+
+    border-radius:16px;
+
+    border:1px solid var(--border);
+
+}
+
+/* ===========================================================
+BADGE
+=========================================================== */
+
+.badge{
+
+    background:#EAF7EF;
+
+    color:var(--primary);
+
+    border-radius:100px;
+
+    padding:6px 16px;
+
+    font-size:13px;
+
+}
+
+/* ==========================================================
+   SKELETON (loading)
+
+   Usado em textos/fotos que dependem de dados do Firestore
+   (nome, foto, estatísticas) — evita mostrar um valor padrão
+   (tipo "Usuário" ou "0") por um instante antes do dado real
+   chegar. Some assim que o JS troca pelo conteúdo real (ver
+   home/profile.controller.js e components.js).
+========================================================== */
+
+@keyframes skeletonPulse{
+
+    0%, 100%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        opacity:.5;
+
+    }
+
+}
+
+.skeleton{
+
+    color:transparent !important;
+
+    background:var(--border) !important;
+
+    border-radius:8px;
+
+    animation:skeletonPulse 1.3s ease-in-out infinite;
+
+}
+
+img.skeleton{
+
+    color:transparent;
+
+    opacity:.5;
+
+    animation:skeletonPulse 1.3s ease-in-out infinite;
+
+}
+
+/* ==========================================================
+   SPINNER
+
+   Indicador simples de carregamento pra listas (últimos
+   escaneamentos, catálogo) enquanto o Firestore responde.
+========================================================== */
+
+.spinner{
+
+    width:32px;
+
+    height:32px;
+
+    margin:24px auto;
+
+    border:4px solid var(--border);
+
+    border-top-color:var(--primary-color);
+
+    border-radius:50%;
+
+    animation:spin .8s linear infinite;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ==========================================================
+   Bottom Navigation
+========================================================== */
+
+.bottom-nav{
+
+    position:fixed;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    height:78px;
+
+    background:var(--surface-color);
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    border-top:1px solid var(--border);
+
+    box-shadow:0 -6px 20px rgba(0,0,0,.06);
+
+    z-index:999;
+
+}
+
+
+/* ---------------- Home e Catálogo ---------------- */
+
+.bottom-nav-item{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    color:var(--text-light);
+
+    transition:.25s;
+
+}
+
+.bottom-nav-item span{
+
+    line-height:1;
+
+    font-size:28px;
+
+}
+
+.bottom-nav-item small{
+
+    margin-top:2px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+.bottom-nav-item.active{
+
+    color:var(--primary);
+
+}
+
+.bottom-nav-item:hover{
+
+    color:var(--primary);
+
+}
+
+
+/* ---------------- Scanner ---------------- */
+
+.scanner-button{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:18px;
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        180deg,
+        #56C271,
+        #3A8F58
+    );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    box-shadow:
+        0 12px 30px rgba(58,143,88,.35);
+
+    transition:.25s;
+
+}
+
+
+.scanner-button:hover{
+
+    transform:translateX(-50%) scale(1.08);
+
+}
+
+
+.scanner-button span{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    line-height:1;
+
+    font-size:36px;
+
+    color:white;
+
+}
+
+/* ==========================================================
+   NAVBAR
+   (components/navbar.html — header fixo no topo de cada
+   página, carregado via renderNavbar())
+========================================================== */
+
+.navbar{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 24px;
+
+    background:var(--surface-color);
+
+    box-shadow:0 4px 12px rgba(0,0,0,.04);
+
+}
+
+.navbar-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.back-button{
+
+    width:36px;
+
+    height:36px;
+
+    border-radius:50%;
+
+    background:var(--background-color);
+
+    color:var(--primary-color);
+
+    font-size:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+}
+
+.back-button.hidden{
+
+    display:none;
+
+}
+
+.navbar-left h2{
+
+    font-size:1.1rem;
+
+    color:var(--primary-color);
+
+}
+
+.navbar-left span{
+
+    font-size:.8rem;
+
+    color:var(--text-light);
+
+}
+
+.navbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.logo-button{
+
+    background:none;
+
+    border:none;
+
+    padding:0;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    line-height:0;
+
+}
+
+.navbar-logo{
+
+    width:36px;
+
+    height:36px;
+
+    object-fit:contain;
+
+}
+
+.icon-button{
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:50%;
+
+    background:var(--background-color);
+
+    font-size:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+/* ---------------- Menu do Usuário (Perfil / Sair) ---------------- */
+
+.user-menu-wrapper{
+
+    position:relative;
+
+}
+
+.user-menu{
+
+    position:absolute;
+
+    top:calc(100% + 10px);
+
+    left:0;
+
+    background:var(--surface-color);
+
+    border-radius:14px;
+
+    box-shadow:0 8px 24px rgba(0,0,0,.14);
+
+    padding:8px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2px;
+
+    min-width:160px;
+
+    z-index:1000;
+
+}
+
+.user-menu.hidden{
+
+    display:none;
+
+}
+
+.user-menu-item{
+
+    background:none;
+
+    border:none;
+
+    text-align:left;
+
+    padding:12px 14px;
+
+    border-radius:10px;
+
+    font-size:.95rem;
+
+    font-weight:500;
+
+    color:var(--text-color);
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.user-menu-item:hover{
+
+    background:var(--background-color);
+
+}
+
+/* ---------------- Avatar do Usuário ---------------- */
+
+.navbar-avatar-button{
+
+    background:none;
+
+    border:none;
+
+    padding:0;
+
+    cursor:pointer;
+
+    display:flex;
+
+    line-height:0;
+
+}
+
+.navbar-avatar{
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid var(--primary-color);
+
+}
+
+/* ----------------------------------------------------------
+   Rules abaixo (.eco-navbar, .navbar-user, .navbar-welcome)
+   pertencem a uma variação antiga do navbar que não é mais
+   usada por nenhuma página — mantidas por não causarem
+   conflito, mas candidatas a remoção futura.
+---------------------------------------------------------- */
+
+.eco-navbar{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:28px;
+
+}
+
+.navbar-user{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.navbar-welcome{
+
+    font-size:.8rem;
+
+    color:#7B8A84;
+
+}
+
+.navbar-user h2{
+
+    margin-top:4px;
+
+    font-size:1.6rem;
+
+    font-weight:700;
+
+    color:#1E2C24;
+
+}
+
+/* ==========================================================
+   LOADER
+========================================================== */
+
+.loader-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(241,247,239,.92);
+
+    backdrop-filter:blur(6px);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:99999;
+
+    transition:.3s;
+
+}
+
+.loader-overlay.hidden{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+.loader-card{
+
+    width:320px;
+
+    padding:40px;
+
+    border-radius:28px;
+
+    background:var(--surface-color);
+
+    text-align:center;
+
+    box-shadow:0 18px 40px rgba(0,0,0,.08);
+
+}
+
+.loader-card h2{
+
+    margin-top:20px;
+
+    color:var(--primary);
+
+}
+
+.loader-card p{
+
+    margin-top:10px;
+
+    color:var(--text-light);
+
+    font-size:.95rem;
+
+}
+
+.loader-planet{
+
+    font-size:64px;
+
+    animation:planetFloat 2s ease-in-out infinite;
+
+}
+
+.loader-icon{
+
+    font-size:64px;
+
+    animation:loaderFloat 2s ease-in-out infinite;
+
+}
+
+@keyframes loaderFloat{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+.loader-progress{
+
+    width:100%;
+
+    height:10px;
+
+    margin-top:25px;
+
+    background:#E6ECE6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.loader-progress-fill{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        #4CAF50,
+        #81C784
+    );
+
+    transition:.4s;
+
+}
+
+@keyframes planetFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   TOAST
+
+   Criado dinamicamente via showToast() (js/components.js).
+========================================================== */
+
+.toast{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:100px;
+
+    transform:translate(-50%,12px);
+
+    padding:14px 22px;
+
+    border-radius:50px;
+
+    background:var(--text-color);
+
+    color:white;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+
+    opacity:0;
+
+    z-index:100000;
+
+    transition:opacity .3s,transform .3s;
+
+    pointer-events:none;
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+    transform:translate(-50%,0);
+
+}
+
+.toast-success{
+
+    background:var(--success);
+
+}
+
+.toast-error{
+
+    background:var(--danger);
+
+}
+
+/* ==========================================================
+   MODAL (confirmDialog — ver js/components.js)
+========================================================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.5);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:24px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.2s;
+
+    z-index:100000;
+
+}
+
+.modal.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.modal-content{
+
+    background:var(--surface-color);
+
+    border-radius:24px;
+
+    padding:28px;
+
+    max-width:400px;
+
+    width:100%;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+    text-align:center;
+
+}
+
+.modal-content h2{
+
+    color:var(--primary-color);
+
+    margin-bottom:12px;
+
+}
+
+.modal-content p{
+
+    color:var(--text-light);
+
+    line-height:1.6;
+
+    margin-bottom:24px;
+
+}
+
+.modal-actions{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+.modal-actions button{
+
+    flex:1;
+
+    width:auto;
+
+}

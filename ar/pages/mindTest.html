@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MindAR Teste</title>
+
+    <!-- ==========================================================
+         Import map (Rodada 20)
+
+         ar/scripts/*.js usa imports "nus" (import ... from
+         "three", "mindar-image-three") — sem isso, o navegador
+         não sabe pra onde essas duas libs apontam, já que esse
+         projeto não usa bundler (Vite/Webpack). O import map
+         resolve isso direto via CDN, sem precisar de build.
+    ========================================================== -->
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+          "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+          "mindar-image-three": "https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-three.prod.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="ar-container"></div>
+
+    <div id="loading">Inicializando câmera...</div>
+
+    <button id="placeButton">Colocar objeto no ambiente</button>
+
+    <script type="module" src="../scripts/main.js"></script>
+  </body>
+</html>

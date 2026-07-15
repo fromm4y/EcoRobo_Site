@@ -1,0 +1,82 @@
+* {
+  font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+model-viewer {
+  width: 90%;
+  height: 70%;
+  margin: 20px auto;
+}
+
+.nav-div {
+  width: 100%;
+  min-height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  gap: 25px;
+}
+
+.title-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 20%;
+  padding: 1%;
+}
+
+.gif-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#ar-container {
+  width: 100vw;
+
+  height: 100vh;
+}
+
+#loading {
+  position: absolute;
+
+  top: 20px;
+
+  left: 20px;
+
+  color: white;
+}
+
+#placeButton {
+  position: absolute;
+
+  bottom: 40px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  padding: 15px;
+}
+
+#loading.hidden {
+  display: none;
+}

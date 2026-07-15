@@ -1,0 +1,253 @@
+<!-- ==========================================================
+     EcoRobo
+     Detalhes do Resíduo (aberto a partir de um card do
+     Catálogo — reaproveita o layout da tela de Resultado)
+========================================================== -->
+
+<div id="navbar-container"></div>
+
+<div class="result-page">
+
+    <!-- ==========================================
+         Cabeçalho
+    =========================================== -->
+
+    <section class="result-header">
+
+        <h1>📄 Detalhes do Resíduo</h1>
+
+        <p>
+
+            Resíduo já escaneado, salvo no seu catálogo.
+
+        </p>
+
+    </section>
+
+    <!-- ==========================================
+         Imagem
+    =========================================== -->
+
+    <section class="result-image">
+
+        <img
+
+            id="resultImage"
+
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%23eeeeee'/%3E%3Ccircle cx='50' cy='45' r='16' fill='%23bdbdbd'/%3E%3Cpath d='M20 78l18-20 14 14 12-16 16 22z' fill='%23bdbdbd'/%3E%3C/svg%3E"
+
+            alt="Imagem do resíduo">
+
+    </section>
+
+    <!-- ==========================================
+         Estado de erro (item não encontrado)
+    =========================================== -->
+
+    <section id="resultError" class="result-error hidden">
+
+        <span class="result-error-icon" aria-hidden="true">😕</span>
+
+        <p id="resultErrorMessage">
+
+            Não foi possível encontrar esse item.
+
+        </p>
+
+        <button id="btnErrorBackToCatalog" class="primary-button">
+
+            📚 Voltar ao Catálogo
+
+        </button>
+
+    </section>
+
+    <!-- ==========================================
+         Conteúdo (dados salvos do resíduo)
+    =========================================== -->
+
+    <div id="resultContent" class="hidden">
+
+    <!-- ==========================================
+         Informações principais
+    =========================================== -->
+
+    <section class="result-card">
+
+        <span
+            id="wasteCategory"
+            class="category-badge">
+
+        </span>
+
+        <h2 id="wasteName">
+
+        </h2>
+
+        <p id="scientificName">
+
+        </p>
+
+    </section>
+
+    <!-- ==========================================
+         Confiança
+    =========================================== -->
+
+    <section class="confidence-card">
+
+        <div class="confidence-header">
+
+            <span>
+
+                Confiança da IA
+
+            </span>
+
+            <strong id="confidenceValue">
+
+            </strong>
+
+        </div>
+
+        <div class="progress">
+
+            <div
+                id="confidenceBar"
+                class="progress-bar">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         Informações
+    =========================================== -->
+
+    <section class="info-grid">
+
+        <div class="info-card">
+
+            <span>
+
+                ♻️ Reciclável
+
+            </span>
+
+            <strong id="recyclable">
+
+            </strong>
+
+        </div>
+
+        <div class="info-card">
+
+            <span>
+
+                🗑 Lixeira
+
+            </span>
+
+            <strong id="trashColor">
+
+            </strong>
+
+        </div>
+
+        <div class="info-card">
+
+            <span>
+
+                ⏳ Decomposição
+
+            </span>
+
+            <strong id="decomposition">
+
+            </strong>
+
+        </div>
+
+        <div class="info-card">
+
+            <span>
+
+                🌎 Impacto
+
+            </span>
+
+            <strong id="impact">
+
+            </strong>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         Descrição
+    =========================================== -->
+
+    <section class="description-card">
+
+        <h3>
+
+            Sobre este resíduo
+
+        </h3>
+
+        <p id="description">
+
+        </p>
+
+    </section>
+
+    <!-- ==========================================
+         Curiosidade
+    =========================================== -->
+
+    <section class="curiosity-card">
+
+        <h3>
+
+            💡 Curiosidade
+
+        </h3>
+
+        <p id="curiosity">
+
+        </p>
+
+    </section>
+
+    <!-- ==========================================
+         Botões
+    =========================================== -->
+
+    <section class="result-buttons">
+
+        <button
+            id="btnAction"
+            class="primary-button">
+
+            🎮 Jogar Minigame
+
+        </button>
+
+        <button
+            id="btnBackToCatalog"
+            class="secondary-button">
+
+            📚 Voltar ao Catálogo
+
+        </button>
+
+    </section>
+
+    </div>
+
+</div>
+
+<div id="footer-container"></div>

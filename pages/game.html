@@ -1,0 +1,63 @@
+<!-- ==========================================================
+     EcoRobo
+     Minigame (GDevelop)
+========================================================== -->
+
+<div id="navbar-container"></div>
+
+<div class="game-page">
+
+    <!-- ==========================================
+         Cabeçalho
+    =========================================== -->
+
+    <section class="game-header">
+
+        <h1>🎮 Minigame</h1>
+
+        <p id="gameSubtitle">
+
+            Carregando o jogo...
+
+        </p>
+
+    </section>
+
+    <!-- ==========================================
+         Jogo (GDevelop, rodando dentro de um iframe)
+    =========================================== -->
+
+    <section class="game-frame-wrapper">
+
+        <!-- ==========================================
+             Cobre a splash padrão do GDevelop (e o
+             carregamento inicial) até o jogo avisar que
+             está pronto — ver "ecoRoboStatus:ready" em
+             game/index.html e game.controller.js.
+        =========================================== -->
+
+        <div id="gameLoadingOverlay" class="game-loading-overlay">
+
+            <div class="spinner"></div>
+
+            <p>Abrindo minijogo...</p>
+
+        </div>
+
+        <iframe
+
+            id="gameFrame"
+
+            class="game-frame"
+
+            title="Minigame EcoRobo"
+
+            allow="autoplay">
+
+        </iframe>
+
+    </section>
+
+</div>
+
+<div id="footer-container"></div>

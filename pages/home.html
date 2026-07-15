@@ -1,0 +1,256 @@
+    <!-- ==========================================================
+     EcoRobo
+     Página Inicial
+========================================================== -->
+<div id="navbar-container"></div>
+
+<div class="home-page">
+
+    <!-- ==========================================
+         Cabeçalho
+    =========================================== -->
+
+    <header class="home-header">
+
+        <div class="home-header-left">
+
+            <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%232F6B4F'/%3E%3Cpath d='M50 24c-14 6-22 18-22 32a22 22 0 0044 0c0-14-8-26-22-32z' fill='%23B7E4C7'/%3E%3C/svg%3E"
+                alt="EcoRobo"
+                class="logo">
+
+            <div>
+
+                <span id="greeting">
+                    Bom dia,
+                </span>
+
+                <h2 id="userName" class="skeleton">
+                    Usuário
+                </h2>
+
+            </div>
+
+        </div>
+
+        <img
+
+            src="assets/images/default-avatar.png"
+
+            alt="Usuário"
+
+            id="userPhoto"
+
+            class="user-photo skeleton">
+
+    </header>
+
+    <!-- ==========================================
+         Streak
+    =========================================== -->
+
+    <p id="homeStreak" class="streak-banner hidden">
+
+    </p>
+
+    <!-- ==========================================
+         Banner
+    =========================================== -->
+
+    <section class="banner">
+
+        <h2>
+
+            🌱 Faça a diferença!
+
+        </h2>
+
+        <p>
+
+            Cada item reciclado ajuda a construir um planeta mais sustentável.
+
+        </p>
+
+    </section>
+
+    <!-- ==========================================
+         Estatísticas
+    =========================================== -->
+
+    <section class="stats-section">
+
+        <h3>
+
+            Seu impacto
+
+        </h3>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <span class="stat-icon">
+
+                    ♻️
+
+                </span>
+
+                <h2 id="totalScans" class="skeleton">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Escaneamentos
+
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span class="stat-icon">
+
+                    🎮
+
+                </span>
+
+                <h2 id="gamesPlayed" class="skeleton">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Jogos
+
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span class="stat-icon">
+
+                    🌎
+
+                </span>
+
+                <h2 id="co2Saved" class="skeleton">
+
+                    0 kg
+
+                </h2>
+
+                <p>
+
+                    CO₂ Economizado
+
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span class="stat-icon">
+
+                    ⭐
+
+                </span>
+
+                <h2 id="favoriteWaste" class="skeleton">
+
+                    -
+
+                </h2>
+
+                <p>
+
+                    Mais reciclado
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         Botão Principal
+    =========================================== -->
+
+    <section class="scan-button-section">
+
+        <button
+
+            id="scanNowButton"
+
+            class="primary-button">
+
+            📷 Escanear Resíduo
+
+        </button>
+
+    </section>
+
+    <!-- ==========================================
+         Últimos Escaneamentos
+    =========================================== -->
+
+    <section class="recent-section">
+
+        <div class="section-title">
+
+            <h3>
+
+                Últimos escaneamentos
+
+            </h3>
+
+        </div>
+
+        <div
+
+            id="lastScans"
+
+            class="recent-scans">
+
+            <!-- preenchido via JS -->
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         Notícias
+    =========================================== -->
+
+    <section class="news-section">
+
+        <div class="section-title">
+
+            <h3>
+
+                Notícias
+
+            </h3>
+
+        </div>
+
+        <div
+
+            id="newsList"
+
+            class="news-list">
+
+            <!-- preenchido via JS com dados mockados (NEWS_MOCK) -->
+
+        </div>
+
+    </section>
+</div>
+<div id="footer-container"></div>

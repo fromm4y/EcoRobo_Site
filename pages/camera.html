@@ -1,0 +1,106 @@
+<!-- ==========================================================
+     EcoRobo
+     Página da Câmera
+========================================================== -->
+
+<div id="navbar-container"></div>
+
+<div class="camera-page">
+
+    <!-- ==========================================
+         Cabeçalho
+    =========================================== -->
+
+    <section class="camera-header">
+
+        <h1>📷 Escanear Resíduo</h1>
+
+        <p>
+            Tire uma foto ou selecione uma imagem da galeria para identificar o resíduo.
+        </p>
+
+    </section>
+
+    <!-- ==========================================
+         Área da câmera
+    =========================================== -->
+
+    <section class="camera-preview">
+
+        <div id="previewContainer" class="preview-placeholder">
+
+            <div id="previewEmpty" class="preview-empty">
+
+                <span class="preview-icon" aria-hidden="true">🖼️</span>
+
+                <p>
+
+                    Nenhuma imagem selecionada
+
+                </p>
+
+            </div>
+
+            <img
+                id="previewImage"
+                alt="Pré-visualização">
+
+            <div id="imageInfo" class="image-info">
+
+                <strong id="imageName">
+
+                </strong>
+                <span id="imageSize">
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         Botões
+    =========================================== -->
+
+    <section class="camera-actions">
+
+        <button
+            id="btnCamera"
+            class="primary-button">
+
+            📷 Tirar Foto
+
+        </button>
+
+        <button
+            id="btnGallery"
+            class="secondary-button">
+
+            🖼 Escolher da Galeria
+
+        </button>
+
+        <button
+            id="btnAnalyze"
+            class="primary-button disabled"
+            disabled>
+
+            🤖 Analisar Resíduo
+
+        </button>
+
+    </section>
+
+    <!-- Input escondido -->
+
+    <input
+        type="file"
+        id="galleryInput"
+        accept="image/*"
+        hidden>
+
+</div>
+
+<div id="footer-container"></div>

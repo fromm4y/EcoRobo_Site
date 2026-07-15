@@ -1,0 +1,38 @@
+{
+  "name": "EcoRobo",
+  "short_name": "EcoRobo",
+  "description": "Sistema inteligente para identificação e educação ambiental através de Inteligência Artificial.",
+
+  "start_url": "./index.html",
+
+  "scope": "./",
+
+  "display": "standalone",
+
+  "orientation": "portrait",
+
+  "background_color": "#F5F7F2",
+
+  "theme_color": "#3FA34D",
+
+  "lang": "pt-BR",
+
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/maskable-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

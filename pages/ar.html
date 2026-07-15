@@ -1,0 +1,69 @@
+<!-- ==========================================================
+     EcoRobo
+     Realidade Aumentada (protótipo MindAR)
+========================================================== -->
+
+<div id="navbar-container"></div>
+
+<div class="ar-page">
+
+    <!-- ==========================================
+         Cabeçalho
+    =========================================== -->
+
+    <section class="ar-header">
+
+        <h1>🥽 Realidade Aumentada</h1>
+
+        <p id="arSubtitle">
+
+            Carregando a experiência de AR...
+
+        </p>
+
+    </section>
+
+    <!-- ==========================================
+         AR (MindAR, rodando dentro de um iframe)
+    =========================================== -->
+
+    <section class="ar-frame-wrapper">
+
+        <!-- ==========================================
+             Cobre o carregamento inicial e o pedido de
+             permissão de câmera, até a experiência avisar
+             que a câmera já está de pé — ver
+             "ecoRoboStatus:cameraReady" em ar.controller.js.
+        =========================================== -->
+
+        <div id="arLoadingOverlay" class="ar-loading-overlay">
+
+            <div class="spinner"></div>
+
+            <p>Abrindo câmera...</p>
+
+        </div>
+
+        <iframe
+
+            id="arFrame"
+
+            class="ar-frame"
+
+            title="Realidade Aumentada EcoRobo"
+
+            allow="camera; autoplay">
+
+        </iframe>
+
+    </section>
+
+    <p id="arStatus" class="ar-status">
+
+        🔍 Procurando marcador...
+
+    </p>
+
+</div>
+
+<div id="footer-container"></div>

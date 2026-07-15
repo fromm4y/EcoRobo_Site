@@ -1,0 +1,491 @@
+/* ==========================================================
+   EcoRobo
+   Catálogo
+========================================================== */
+
+/* ==========================================================
+   Página
+========================================================== */
+
+.catalog-page{
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding:24px;
+
+    padding-bottom:120px;
+
+    background:var(--background-color);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+/* ==========================================================
+   Cabeçalho
+========================================================== */
+
+.catalog-header{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.catalog-header h1{
+
+    color:var(--primary-color);
+
+    font-size:2rem;
+
+}
+
+.catalog-header p{
+
+    color:var(--text-light);
+
+    line-height:1.6;
+
+}
+
+/* ==========================================================
+   Resumo em Destaque
+
+   Mesmo estilo visual do banner "Faça a diferença!" da Home.
+========================================================== */
+
+.catalog-summary{
+
+    background:linear-gradient(
+
+        135deg,
+
+        var(--primary-color),
+
+        var(--secondary-color)
+
+    );
+
+    color:white;
+
+    border-radius:24px;
+
+    padding:26px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+
+.catalog-summary.hidden{
+
+    display:none;
+
+}
+
+.catalog-summary h2{
+
+    margin-bottom:8px;
+
+    font-size:1.3rem;
+
+}
+
+.catalog-summary p{
+
+    line-height:1.5;
+
+    opacity:.9;
+
+}
+
+/* ==========================================================
+   Filtros por Categoria
+========================================================== */
+
+.catalog-filters{
+
+    display:flex;
+
+    gap:10px;
+
+    overflow-x:auto;
+
+    padding-bottom:4px;
+
+}
+
+.catalog-filters.hidden{
+
+    display:none;
+
+}
+
+.catalog-filters::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.filter-chip{
+
+    flex-shrink:0;
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    border:2px solid var(--border);
+
+    background:var(--surface-color);
+
+    color:var(--text-light);
+
+    font-weight:600;
+
+    font-size:.85rem;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    white-space:nowrap;
+
+}
+
+.filter-chip:hover{
+
+    border-color:var(--primary-color);
+
+}
+
+.filter-chip.active{
+
+    background:var(--primary-color);
+
+    border-color:var(--primary-color);
+
+    color:white;
+
+}
+
+/* ==========================================================
+   Estado Vazio
+
+   Mesmo padrão visual do preview vazio da câmera
+   (ícone + texto), pra manter consistência.
+========================================================== */
+
+.catalog-empty{
+
+    width:100%;
+
+    background:var(--surface-color);
+
+    border-radius:24px;
+
+    padding:40px 24px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:16px;
+
+    text-align:center;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.06);
+
+}
+
+.catalog-empty.hidden{
+
+    display:none;
+
+}
+
+.catalog-empty-icon{
+
+    font-size:48px;
+
+}
+
+.catalog-empty p{
+
+    color:var(--text-light);
+
+    line-height:1.6;
+
+}
+
+.catalog-empty .primary-button{
+
+    width:auto;
+
+    padding:16px 28px;
+
+}
+
+/* ==========================================================
+   Grid de Itens
+
+   Cards no mesmo estilo dos .stat-card da Home (fundo
+   branco, cantos arredondados, sombra suave), com um
+   acento de cor por categoria e leve entrada em fade/slide.
+========================================================== */
+
+.catalog-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+
+}
+
+.catalog-grid.hidden{
+
+    display:none;
+
+}
+
+.catalog-card{
+
+    position:relative;
+
+    background:var(--surface-color);
+
+    border-radius:20px;
+
+    border-left:6px solid var(--border);
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:8px;
+
+    text-align:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+    transition:transform .25s;
+
+    animation:catalogCardIn .4s ease both;
+
+    cursor:pointer;
+
+}
+
+.catalog-card-delete{
+
+    position:absolute;
+
+    top:10px;
+
+    right:10px;
+
+    width:30px;
+
+    height:30px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:rgba(0,0,0,.06);
+
+    font-size:.9rem;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.catalog-card-delete:hover{
+
+    background:var(--danger);
+
+    transform:scale(1.08);
+
+}
+
+.catalog-card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+@keyframes catalogCardIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(16px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ---------------- Acento por categoria ---------------- */
+
+.catalog-card[data-category="Plástico"]{
+
+    border-left-color:#4C956C;
+
+    background:#F3FAF5;
+
+}
+
+.catalog-card[data-category="Metal"]{
+
+    border-left-color:#78909C;
+
+    background:#F4F6F7;
+
+}
+
+.catalog-card[data-category="Vidro"]{
+
+    border-left-color:#4FC3F7;
+
+    background:#F0F9FD;
+
+}
+
+.catalog-card[data-category="Papel"]{
+
+    border-left-color:#A67C52;
+
+    background:#FAF6F2;
+
+}
+
+.catalog-card[data-category="Orgânico"]{
+
+    border-left-color:#8E5A2B;
+
+    background:#FBF5EF;
+
+}
+
+/* No escuro, os tons claros de fundo por categoria ficariam
+   "lavados" — usa a mesma cor de superfície pra todas, só a
+   borda colorida continua marcando a categoria. */
+
+body.dark-mode .catalog-card[data-category]{
+
+    background:var(--surface-color);
+
+}
+
+.catalog-card-image{
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:18px;
+
+    object-fit:cover;
+
+    background:var(--border);
+
+}
+
+.catalog-card h3{
+
+    font-size:1rem;
+
+    color:var(--text-color);
+
+}
+
+.catalog-card-category{
+
+    background:var(--primary-color);
+
+    color:white;
+
+    font-weight:600;
+
+    font-size:.8rem;
+
+    padding:4px 14px;
+
+    border-radius:50px;
+
+}
+
+.catalog-card small{
+
+    color:var(--text-light);
+
+    font-size:.8rem;
+
+}
+
+.catalog-filter-empty{
+
+    grid-column:1/-1;
+
+    text-align:center;
+
+    color:var(--text-light);
+
+    padding:30px 0;
+
+}
+
+/* ==========================================================
+   Responsividade
+========================================================== */
+
+@media(min-width:900px){
+
+    .catalog-page{
+
+        max-width:900px;
+
+        margin:auto;
+
+    }
+
+    .catalog-grid{
+
+        grid-template-columns:repeat(4,1fr);
+
+    }
+
+}

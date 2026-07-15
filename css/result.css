@@ -1,0 +1,604 @@
+/* ==========================================================
+   EcoRobo
+   Resultado da IA
+========================================================== */
+
+/* ==========================================================
+   Página
+========================================================== */
+
+.result-page{
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding:24px;
+
+    padding-bottom:120px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+    background:var(--background-color);
+
+}
+
+/* ==========================================================
+   Conteúdo real (dados do resíduo)
+
+   Agrupa os cards de resultado num único elemento pra poder
+   escondê-los de uma vez só quando o estado de erro aparece.
+========================================================== */
+
+#resultContent{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+#resultContent.hidden{
+
+    display:none;
+
+}
+
+/* ==========================================================
+   Estado de Erro
+
+   Mesmo padrão visual do estado vazio da câmera/catálogo
+   (ícone + texto + botão), pra manter consistência.
+========================================================== */
+
+.result-error{
+
+    width:100%;
+
+    background:var(--surface-color);
+
+    border-radius:24px;
+
+    padding:40px 24px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:16px;
+
+    text-align:center;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.06);
+
+}
+
+.result-error.hidden{
+
+    display:none;
+
+}
+
+.result-error-icon{
+
+    font-size:48px;
+
+}
+
+.result-error p{
+
+    color:var(--text-light);
+
+    line-height:1.6;
+
+}
+
+.result-error .primary-button{
+
+    width:auto;
+
+    padding:16px 28px;
+
+}
+
+/* ==========================================================
+   Cabeçalho
+========================================================== */
+
+.result-header{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.result-header h1{
+
+    font-size:2rem;
+
+    color:var(--primary-color);
+
+}
+
+.result-header p{
+
+    color:var(--text-light);
+
+    line-height:1.6;
+
+}
+
+/* ==========================================================
+   Imagem
+========================================================== */
+
+.result-image{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.result-image img{
+
+    width:100%;
+
+    max-width:420px;
+
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:24px;
+
+    background:var(--border);
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+
+/* ==========================================================
+   Animação de Escaneamento
+
+   Ativada via JS (result.controller.js) enquanto a análise
+   (mockada) está "acontecendo". Classe .scanning liga a
+   linha + o texto sobre a imagem.
+========================================================== */
+
+.scan-overlay{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:420px;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+}
+
+.scan-line{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    right:0;
+
+    height:3px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        #34d399,
+
+        transparent
+
+    );
+
+    box-shadow:0 0 12px 2px rgba(52,211,153,.8);
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+.scan-label{
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:14px;
+
+    text-align:center;
+
+    color:white;
+
+    font-weight:600;
+
+    font-size:.9rem;
+
+    text-shadow:0 2px 6px rgba(0,0,0,.5);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity .2s;
+
+}
+
+.scan-overlay.scanning .scan-line{
+
+    opacity:1;
+
+    animation:scanMove 1.6s ease-in-out infinite;
+
+}
+
+.scan-overlay.scanning .scan-label{
+
+    opacity:1;
+
+}
+
+@keyframes scanMove{
+
+    0%{
+
+        top:0;
+
+    }
+
+    50%{
+
+        top:calc(100% - 3px);
+
+    }
+
+    100%{
+
+        top:0;
+
+    }
+
+}
+
+/* ==========================================================
+   Card Principal
+========================================================== */
+
+.result-card{
+
+    background:var(--surface-color);
+
+    border-radius:22px;
+
+    padding:24px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.category-badge{
+
+    width:max-content;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    background:var(--primary-color);
+
+    color:white;
+
+    font-weight:600;
+
+    font-size:.9rem;
+
+}
+
+.result-card h2{
+
+    font-size:2rem;
+
+    color:var(--text-color);
+
+}
+
+.result-card p{
+
+    color:var(--text-light);
+
+}
+
+/* ==========================================================
+   Confiança
+========================================================== */
+
+.confidence-card{
+
+    background:var(--surface-color);
+
+    padding:20px;
+
+    border-radius:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+}
+
+.confidence-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:14px;
+
+}
+
+.confidence-header strong{
+
+    color:var(--primary-color);
+
+    font-size:1.2rem;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:12px;
+
+    background:var(--border);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-bar{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #34d399,
+
+        #22c55e
+
+    );
+
+    transition:width .8s;
+
+}
+
+/* ==========================================================
+   Informações
+========================================================== */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(
+
+        auto-fit,
+
+        minmax(160px,1fr)
+
+    );
+
+    gap:18px;
+
+}
+
+.info-card{
+
+    background:var(--surface-color);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    text-align:center;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.05);
+
+}
+
+.info-card span{
+
+    color:var(--text-light);
+
+    font-size:.95rem;
+
+}
+
+.info-card strong{
+
+    font-size:1.15rem;
+
+    color:var(--primary-color);
+
+}
+
+/* ==========================================================
+   Descrição
+========================================================== */
+
+.description-card,
+
+.curiosity-card{
+
+    background:var(--surface-color);
+
+    padding:22px;
+
+    border-radius:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.description-card h3,
+
+.curiosity-card h3{
+
+    color:var(--primary-color);
+
+}
+
+.description-card p,
+
+.curiosity-card p{
+
+    line-height:1.8;
+
+    color:var(--text-color);
+
+}
+
+/* ==========================================================
+   Botões
+========================================================== */
+
+.result-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.result-buttons button{
+
+    width:100%;
+
+}
+
+/* ==========================================================
+   Animações
+========================================================== */
+
+.result-card,
+
+.confidence-card,
+
+.info-card,
+
+.description-card,
+
+.curiosity-card{
+
+    animation:fadeUp .5s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   Desktop
+========================================================== */
+
+@media(min-width:900px){
+
+    .result-page{
+
+        max-width:900px;
+
+        margin:auto;
+
+    }
+
+    .result-image img{
+
+        height:420px;
+
+    }
+
+    .result-buttons{
+
+        flex-direction:row;
+
+        flex-wrap:wrap;
+
+    }
+
+    .result-buttons button{
+
+        flex:1;
+
+    }
+
+}

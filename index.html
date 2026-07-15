@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <!-- ==========================================================
+         EcoRobo
+         Página principal do sistema
+    =========================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>EcoRobo</title>
+
+    <meta
+        name="description"
+        content="EcoRobo - Inteligência Artificial para Educação Ambiental">
+
+    <meta
+        name="theme-color"
+        content="#3FA34D">
+
+    <!-- ==========================================================
+         Manifest PWA
+    =========================================================== -->
+
+    <link
+        rel="manifest"
+        href="manifest.json">
+
+    <!-- ==========================================================
+         Ícone
+    =========================================================== -->
+
+    <link
+        rel="icon"
+        href="assets/icons/icon-192.png">
+
+    <!-- ==========================================================
+         Google Fonts
+    =========================================================== -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- ==========================================================
+         CSS
+    =========================================================== -->
+
+    <link rel="stylesheet" href="css/variables.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/components.css">
+
+    <link rel="stylesheet" href="css/animations.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+    <!-- ==========================================================
+         Container principal da aplicação.
+
+         O Router irá trocar o conteúdo desta div
+         conforme o usuário navega pelo sistema.
+    =========================================================== -->
+
+    <div id="app"></div>
+
+    <!-- ==========================================================
+         Loader (fica fora de #app pra sobreviver às trocas de
+         página do Router, que substituem só o innerHTML de #app)
+    =========================================================== -->
+
+    <div id="loader-container"></div>
+
+    <!-- ==========================================================
+         Modal de confirmação (mesmo motivo do loader acima)
+    =========================================================== -->
+
+    <div id="modal-container"></div>
+
+    <!-- ==========================================================
+         JavaScript Principal
+    =========================================================== -->
+
+    <script type="module" src="js/app.js"></script>
+
+    <!-- ==========================================================
+         Registro do Service Worker
+    =========================================================== -->
+
+    <script>
+
+        if ("serviceWorker" in navigator) {
+
+            window.addEventListener("load", () => {
+
+                navigator.serviceWorker
+                    .register("./service-worker.js")
+
+                    .then(() => {
+
+                        console.log("✅ Service Worker registrado.");
+
+                    })
+
+                    .catch(error => {
+
+                        console.error(error);
+
+                    });
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,260 @@
+<!-- ==========================================================
+     EcoRobo
+     Página de Perfil
+========================================================== -->
+
+<div id="navbar-container"></div>
+
+<div class="profile-page">
+
+    <!-- ==========================================
+         Cabeçalho
+    =========================================== -->
+
+    <section class="profile-header">
+
+        <div class="profile-photo-wrapper">
+
+            <img
+
+                id="profilePhoto"
+
+                src="assets/images/default-avatar.png"
+
+                alt="Usuário"
+
+                class="profile-photo skeleton">
+
+            <button
+
+                id="btnProfilePhotoEdit"
+
+                class="profile-photo-edit"
+
+                type="button"
+
+                title="Trocar foto"
+
+                aria-label="Trocar foto de perfil">
+
+                📷
+
+            </button>
+
+            <input
+
+                id="profilePhotoInput"
+
+                type="file"
+
+                accept="image/*"
+
+                class="profile-photo-input">
+
+        </div>
+
+        <h2 id="profileName" class="skeleton">
+
+            Usuário
+
+        </h2>
+
+        <p id="profileEmail">
+
+        </p>
+
+        <p id="profileStreak" class="streak-banner hidden">
+
+        </p>
+
+    </section>
+
+    <!-- ==========================================
+         Estatísticas (mesmo padrão da Home)
+    =========================================== -->
+
+    <section class="stats-section">
+
+        <h3>
+
+            Seu impacto
+
+        </h3>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <span class="stat-icon">
+
+                    ♻️
+
+                </span>
+
+                <h2 id="profileTotalScans" class="skeleton">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Escaneamentos
+
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span class="stat-icon">
+
+                    🎮
+
+                </span>
+
+                <h2 id="profileGamesPlayed" class="skeleton">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Jogos
+
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span class="stat-icon">
+
+                    🌎
+
+                </span>
+
+                <h2 id="profileCo2Saved" class="skeleton">
+
+                    0 kg
+
+                </h2>
+
+                <p>
+
+                    CO₂ Economizado
+
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span class="stat-icon">
+
+                    ⭐
+
+                </span>
+
+                <h2 id="profileFavoriteWaste" class="skeleton">
+
+                    -
+
+                </h2>
+
+                <p>
+
+                    Mais reciclado
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         Evolução do impacto (últimos 7 dias)
+    =========================================== -->
+
+    <section class="chart-section">
+
+        <h3>
+
+            📈 Evolução (últimos 7 dias)
+
+        </h3>
+
+        <div id="impactChart" class="chart-bars">
+
+            <!-- preenchido via JS -->
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         Conquistas
+    =========================================== -->
+
+    <section class="achievements-section">
+
+        <h3>
+
+            🏆 Minhas Conquistas
+
+        </h3>
+
+        <div id="achievementsGrid" class="achievements-grid">
+
+            <!-- preenchido via JS -->
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         Ações
+    =========================================== -->
+
+    <section class="profile-actions">
+
+        <button id="btnProfileCatalog" class="secondary-button">
+
+            📚 Meu Catálogo
+
+        </button>
+
+        <button id="btnDarkModeToggle" class="secondary-button">
+
+            🌙 Modo Escuro
+
+        </button>
+
+        <button id="btnProfileLogout" class="secondary-button logout-button">
+
+            🚪 Sair
+
+        </button>
+
+    </section>
+
+    <!-- ==========================================
+         Zona de risco
+    =========================================== -->
+
+    <section class="danger-zone">
+
+        <button id="btnDeleteAccount" class="text-danger-link" type="button">
+
+            Excluir minha conta
+
+        </button>
+
+    </section>
+
+</div>
+
+<div id="footer-container"></div>
